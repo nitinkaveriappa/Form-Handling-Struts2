@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <package name="default" namespace="/" extends="struts-default">
+          
+     <global-results>
+     	<result name="error">error.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>
+     	<exception-mapping exception="java.lang.Exception" result="error"/>
+     </global-exception-mappings>
+
+     <action name="submitSurvey" class="MainAction" method="execute">
+     	<result name="simple">SimpleAcknowledgement.jsp</result>
+        <result name="winner">WinnerAcknowledgement.jsp</result>
+     </action>
+    
+     <action name="getDetails" class="MainAction" method="fetch">
+        <result name="success">Student.jsp</result>
+     	<result name="failure">NoSuchStudent.jsp</result>
+     </action>
+     
+   </package>
+</struts>
